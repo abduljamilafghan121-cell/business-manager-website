@@ -497,7 +497,7 @@ export default function Home() {
                     </a>
 
                     <a
-                      href="tel:+0093706530071"
+                      href="tel:+93706530071"
                       className="flex items-center gap-3 rounded-2xl border border-white/20 glass-morphism p-4 hover-lift transition-all duration-300 hover:border-white/40 hover:bg-white/40"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
@@ -507,12 +507,12 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="text-sm font-medium text-gray-800">Phone</div>
-                        <div className="text-xs text-gray-600">+0093 706 530 071</div>
+                        <div className="text-xs text-gray-600">+93 706 530 071</div>
                       </div>
                     </a>
 
                     <a
-                      href="https://wa.me/0093781756957"
+                      href="https://wa.me/93781756957"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 rounded-2xl border border-white/20 glass-morphism p-4 hover-lift transition-all duration-300 hover:border-white/40 hover:bg-white/40"
@@ -524,7 +524,7 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="text-sm font-medium text-gray-800">WhatsApp</div>
-                        <div className="text-xs text-gray-600">+0093 781 756 957</div>
+                        <div className="text-xs text-gray-600">+93 781 756 957</div>
                       </div>
                     </a>
                   </div>
