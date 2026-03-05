@@ -1,0 +1,129 @@
+/* Enhanced Button System */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply btn text-white bg-accent-600 border border-transparent shadow-sm hover:bg-accent-700 focus:ring-accent-500;
+}
+
+.btn-primary:disabled {
+  @apply bg-accent-300 cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply btn text-primary-700 bg-white border border-primary-300 shadow-sm hover:bg-primary-50 focus:ring-accent-500;
+}
+
+.btn-secondary:disabled {
+  @apply bg-primary-100 text-primary-400 cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply btn text-primary-600 bg-transparent border border-transparent hover:bg-primary-100 focus:ring-accent-500;
+}
+
+.btn-danger {
+  @apply btn text-white bg-error-600 border border-transparent shadow-sm hover:bg-error-700 focus:ring-error-500;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.btn-lg {
+  @apply px-6 py-3 text-base;
+}
+
+.btn-icon {
+  @apply p-2;
+}
+
+/* Enhanced Form System */
+.form-group {
+  @apply space-y-1;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-primary-700;
+}
+
+.form-label-required::after {
+  content: " *";
+  @apply text-error-500;
+}
+
+.form-input {
+  @apply input-field;
+}
+
+.form-input-error {
+  @apply border-error-300 focus:ring-error-500 focus:border-error-500;
+}
+
+.form-textarea {
+  @apply input-field resize-y min-h-[80px];
+}
+
+.form-select {
+  @apply input-field pr-8;
+}
+
+.form-checkbox {
+  @apply h-4 w-4 rounded border-primary-300 text-accent-600 focus:ring-accent-500;
+}
+
+.form-radio {
+  @apply h-4 w-4 border-primary-300 text-accent-600 focus:ring-accent-500;
+}
+
+.form-error {
+  @apply text-sm text-error-600 mt-1;
+}
+
+.form-hint {
+  @apply text-sm text-primary-500 mt-1;
+}
+
+.form-fieldset {
+  @apply space-y-4;
+}
+
+.form-legend {
+  @apply text-base font-medium text-primary-900;
+}
+
+/* Loading States */
+.btn-loading {
+  @apply relative;
+}
+
+.btn-loading::before {
+  content: "";
+  @apply absolute inset-0 bg-white/20 rounded-lg;
+}
+
+.spinner {
+  @apply animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full;
+}
+
+/* Button Groups */
+.btn-group {
+  @apply inline-flex rounded-lg shadow-sm;
+}
+
+.btn-group .btn {
+  @apply rounded-none;
+}
+
+.btn-group .btn:first-child {
+  @apply rounded-l-lg;
+}
+
+.btn-group .btn:last-child {
+  @apply rounded-r-lg;
+}
+
+.btn-group .btn:not(:first-child) {
+  @apply -ml-px;
+}
