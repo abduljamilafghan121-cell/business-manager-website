@@ -4,6 +4,14 @@
 
 :root {
   color-scheme: light;
+  --brand: #1d4ed8;
+  --brand-dark: #1e40af;
+}
+
+html {
+  /* clears the sticky header when jumping to an anchor */
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -12,13 +20,20 @@ body {
 }
 
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
   background-attachment: fixed;
   min-height: 100vh;
+  color: #0f172a;
 }
 
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
 }
 
 @layer base {
@@ -29,38 +44,46 @@ body {
 
 @layer components {
   .glass-morphism {
-    @apply bg-white/20 backdrop-blur-lg border border-white/30;
+    @apply border border-white/60 bg-white/70 backdrop-blur-lg;
   }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent;
+
+  .surface {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
   }
-  
+
+  .brand-button {
+    @apply inline-flex items-center justify-center rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md;
+  }
+
+  .quiet-button {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 hover:shadow-sm;
+  }
+
   .hover-lift {
-    @apply transition-all duration-300 ease-out hover:transform hover:-translate-y-1 hover:shadow-xl;
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md;
   }
-  
+
   .fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out both;
   }
-  
+
   .slide-up {
-    animation: slideUp 0.6s ease-out;
+    animation: slideUp 0.6s ease-out both;
   }
-  
+
   .float-animation {
-    animation: float 6s ease-in-out infinite;
+    animation: float 7s ease-in-out infinite;
   }
-  
+
   .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
+    animation: pulseGlow 3s ease-in-out infinite;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -71,7 +94,7 @@ body {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -80,39 +103,43 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.18);
   }
   50% {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 0 10px rgba(29, 78, 216, 0);
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200px 0;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
-}
 
-.shimmer {
-  animation: shimmer 2s linear infinite;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.1) 0px,
-    rgba(255, 255, 255, 0.2) 40px,
-    rgba(255, 255, 255, 0.1) 80px
-  );
-  background-size: 200px 100%;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .float-animation,
+  .pulse-glow,
+  .fade-in,
+  .slide-up {
+    animation: none !important;
+  }
 }

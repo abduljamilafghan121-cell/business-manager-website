@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Business Manager">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6" />
+      <stop offset="1" stop-color="#1e3a8a" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)" />
+  <path
+    d="M14 22h36v24a2 2 0 01-2 2h-9v-4h7v-3H18v3h7v4H16a2 2 0 01-2-2V22zm6 6v4h24v-4H20zm0 10v3h9v-3h-9z"
+    fill="#ffffff"
+  />
+</svg>
