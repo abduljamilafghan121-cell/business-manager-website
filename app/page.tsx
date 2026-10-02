@@ -542,7 +542,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="relative float-animation">
+              <div className="relative float-animation lg:-mt-8">
                 <div className="surface overflow-hidden">
                   <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
                     <div className="text-sm font-bold text-slate-900">

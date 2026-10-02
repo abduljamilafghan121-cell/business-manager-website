@@ -9,7 +9,7 @@
  * A custom domain is better than the .vercel.app address, because customers see
  * the address in their browser.
  */
-const FALLBACK = "https://business-manager-af.vercel.app";
+const FALLBACK = "https://business-manager-website.vercel.app";
 
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? FALLBACK
