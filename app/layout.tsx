@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { siteUrl } from "@/lib/site";
 
 const description =
   "Business Manager is a complete offline desktop system for sales, inventory, purchases, accounting, and reports — built for fast daily operations.";
-
-/**
- * TODO(owner): set NEXT_PUBLIC_SITE_URL to your real domain, e.g.
- * https://businessmanager.app — in .env.local and in your host's dashboard.
- * Until then, canonical/OG/sitemap URLs point at a placeholder and will not be
- * indexed correctly.
- */
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
