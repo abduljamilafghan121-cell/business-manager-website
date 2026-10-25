@@ -25,13 +25,13 @@ export const download = {
   version: "2.1.0",
 
   /** File name as published on the release. */
-  fileName: "Business Manager Setup 2.1.0.exe",
+  fileName: "Business.Manager.Setup.2.1.0.exe",
 
   /** Release tag on GitHub. */
   tag: "v2.1.0",
 
   /** Where the button sends people. */
-  url: "https://github.com/abduljamilafghan121-cell/business-manager-website/releases/download/v2.1.0/Business Manager Setup 2.1.0.exe",
+  url: "https://github.com/abduljamilafghan121-cell/business-manager-website/releases/download/v2.1.0/Business.Manager.Setup.2.1.0.exe",
 
   /** Human-friendly size shown on the button. */
   sizeMb: "84.2 MB",
