@@ -22,25 +22,25 @@
  */
 export const download = {
   /** Version shown to customers. */
-  version: "2.1.1",
+  version: "2.1.0",
 
   /** File name as published on the release. */
-  fileName: "Business.Manager.Setup.2.1.1.exe",
+  fileName: "Business Manager Setup 2.1.0.exe",
 
   /** Release tag on GitHub. */
-  tag: "v2.1.1",
+  tag: "v2.1.0",
 
   /** Where the button sends people. */
-  url: "https://github.com/abduljamilafghan121-cell/business-manager-website/releases/download/v2.1.1/Business.Manager.Setup.2.1.1.exe",
+  url: "https://github.com/abduljamilafghan121-cell/business-manager-website/releases/download/v2.1.0/Business Manager Setup 2.1.0.exe",
 
   /** Human-friendly size shown on the button. */
-  sizeMb: "84.3 MB",
+  sizeMb: "84.2 MB",
 
   /** Real byte size of the file, for verifying the download. */
-  fileSizeBytes: 88371884,
+  fileSizeBytes: 88377760,
 
   /** SHA-256 fingerprint, shown so customers can check the file is complete. */
-  sha256: "7D6490F3C38D839662327373C46388DE466F6458654E5D5CDBABD34CB5C4F8BB",
+  sha256: "6CC243D1AD353302B77CE887073E04FBDF80355D8B0688FD6E3DAEFE08D45F13",
 
   /** Plain-language system requirements shown next to the button. */
   requirements: "Windows 10 or 11, 64-bit"
