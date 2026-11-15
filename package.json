@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "images": "node scripts/images-to-webp.mjs",
-    "release:installer": "node scripts/release-installer.mjs"
+    "release": "node scripts/release.mjs"
   },
   "dependencies": {
     "next": "^16.1.6",

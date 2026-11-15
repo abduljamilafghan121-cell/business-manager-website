@@ -1,12 +1,14 @@
-import { download } from "@/lib/download";
+import type { Release } from "@/lib/release";
 
 type DownloadButtonProps = {
+  release: Release;
   /** "primary" sits in the hero, "outline" is the quieter secondary style. */
   variant?: "primary" | "outline";
   className?: string;
 };
 
 export function DownloadButton({
+  release,
   variant = "primary",
   className = ""
 }: DownloadButtonProps) {
@@ -20,8 +22,7 @@ export function DownloadButton({
 
   return (
     <a
-      href={download.url}
-      download={download.fileName}
+      href={release.url}
       className={`${base} ${skin} ${className}`}
     >
       <svg
@@ -48,7 +49,7 @@ export function DownloadButton({
               : "block text-[11px] font-medium text-slate-500"
           }
         >
-          {download.sizeMb} &middot; version {download.version}
+          {release.sizeMb} &middot; version {release.version}
         </span>
       </span>
     </a>

@@ -2,7 +2,7 @@ import SiteNav from "@/components/SiteNav";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import { screenshots } from "@/components/screenshotData";
 import { DownloadButton } from "@/components/DownloadButton";
-import { download } from "@/lib/download";
+import { getLatestRelease } from "@/lib/release";
 
 type Item = {
   title: string;
@@ -351,7 +351,7 @@ const requirements = [
   { label: "Technical knowledge", value: "None. It installs like any normal program." },
   {
     label: "How you get it",
-    value: "One standard installer (about 84 MB), or a portable version that runs without installing"
+    value: "One standard installer, or a portable version that runs without installing"
   }
 ];
 
@@ -474,7 +474,9 @@ function CheckIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const release = await getLatestRelease();
+
   return (
     <div id="top" className="min-h-screen">
       <a
@@ -519,7 +521,7 @@ export default function Home() {
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <DownloadButton />
+                  <DownloadButton release={release} />
                   <a href="#pricing" className="quiet-button">
                     Get pricing &amp; a demo
                   </a>
@@ -845,11 +847,11 @@ export default function Home() {
               <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <div className="text-lg font-bold text-slate-900">
-                    Business Manager {download.version} for Windows
+                    Business Manager {release.version} for Windows
                   </div>
                   <div className="mt-1 text-sm text-slate-600">
-                    {download.sizeMb} download &middot;{" "}
-                    {download.requirements}
+                    {release.sizeMb} download &middot;{" "}
+                    {release.requirements}
                   </div>
                   <ul className="mt-4 grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
                     <li className="flex items-start gap-2">
@@ -871,7 +873,10 @@ export default function Home() {
                   </ul>
                 </div>
 
-                <DownloadButton className="w-full shrink-0 sm:w-auto" />
+                <DownloadButton
+                  release={release}
+                  className="w-full shrink-0 sm:w-auto"
+                />
               </div>
 
               <div className="mt-6 border-t border-slate-200 pt-4 text-xs leading-relaxed text-slate-500">
@@ -887,16 +892,18 @@ export default function Home() {
                   normal for programs sold directly rather than through the
                   Microsoft Store.
                 </p>
-                <p className="mt-2">
-                  <span className="font-semibold text-slate-700">
-                    Checking the download:
-                  </span>{" "}
-                  If you want to confirm the file arrived complete, its SHA-256
-                  fingerprint is{" "}
-                  <code className="break-all rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[11px] text-slate-700">
-                    {download.sha256}
-                  </code>
-                </p>
+                {release.sha256 ? (
+                  <p className="mt-2">
+                    <span className="font-semibold text-slate-700">
+                      Checking the download:
+                    </span>{" "}
+                    If you want to confirm the file arrived complete, its SHA-256
+                    fingerprint is{" "}
+                    <code className="break-all rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[11px] text-slate-700">
+                      {release.sha256}
+                    </code>
+                  </p>
+                ) : null}
               </div>
             </div>
           </Container>
